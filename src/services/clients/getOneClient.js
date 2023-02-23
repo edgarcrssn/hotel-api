@@ -1,4 +1,4 @@
-import { getAllClients } from './getAllClientsService.js';
+import { getAllClients } from './getAllClients.js';
 
 export const getOneClient = async (id) => {
   const allClients = await getAllClients();

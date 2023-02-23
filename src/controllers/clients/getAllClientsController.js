@@ -1,4 +1,4 @@
-import { getAllClients } from '../../services/clients/getAllClientsService.js';
+import { getAllClients } from '../../services/clients/getAllClients.js';
 
 export default async (req, res) => {
   const data = await getAllClients();

@@ -1,9 +1,11 @@
 import { getHotelRoom } from './getHotelRoom.js';
+import { getOneClient } from '../clients/getOneClient.js';
 
-export const bookRoomFor = async (roomId, name) => {
+export const bookRoomFor = async (roomId, clientId) => {
   const room = await getHotelRoom(roomId);
-  if (!room) return null;
+  const client = await getOneClient(clientId);
+  if (!room || !client) return null;
 
-  const bookedRoom = { ...room, bookedBy: name };
+  const bookedRoom = { ...room, bookedBy: client };
   return bookedRoom;
 };
